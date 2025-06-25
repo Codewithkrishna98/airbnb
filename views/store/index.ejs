@@ -1,0 +1,42 @@
+<%- include('../partials/head') %>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body class="bg-gradient-to-br from-pink-50 via-red-50 to-yellow-50 min-h-screen font-sans">
+     <%- include('../partials/nav') %>
+    <main class="container mx-auto  bg-white shadow-2xl rounded-2xl p-10 mt-12 max-w-6xl">
+      <div class="mb-12 bg-gradient-to-r from-pink-100 via-red-100 to-yellow-100 rounded-2xl shadow-lg p-10">
+        <h1 class="text-3xl md:text-6xl font-extrabold  text-blue-200 text-center text-transparent bg-clip-text bg-gradient-to-r from-pink-600 via-red-500 to-yellow-500 mb-4 drop-shadow-xl">
+          Welcome to RentalRoom
+        </h1>
+        <h2 class="text-3xl md:text-4xl text-center font-semibold mb-6 text-red-600 drop-shadow">
+          Find Your Next Rental Room
+        </h2>
+        <p class="text-center text-gray-700 text-lg">
+          Browse through our curated list of rental rooms and find your perfect stay.
+        </p>
+      </div>
+        </p>
+      </div>
+      <div class="flex flex-wrap justify-center gap-6">
+        <% registeredHomes.forEach(home => { %>
+          <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 w-full max-w-sm">
+            <img src="<%= home.photo %>" alt="<%= home.houseOwnerName %>" class="w-full h-48 object-cover">
+            <div class="p-4">
+              <h3 class="text-xl font-semibold text-gray-800 mb-2"><%= home.houseOwnerName %></h3>
+              <p class="text-gray-600 mb-2"><i class="fas fa-map-marker-alt mr-2"></i><%= home.location %></p>
+              <div class="flex justify-between items-center mb-2">
+                <span class="text-lg font-bold text-red-500">₹<%= home.price %> / month</span>
+                <div class="flex items-center">
+                 <div>
+                     <i class="fas fa-phone mr-1 text-blue-500"></i>
+                     <%= home.ownerContact ? String(home.ownerContact) : 'No contact available' %>
+                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+    </main>
+  </body>
+</html

@@ -1,0 +1,10 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+<form action="/favourites" method="POST">
+  <button type="submit" class="flex mt-1 items-center gap-2 bg-pink-500 hover:bg-pink-600 text-white font-bold rounded-full px-5 py-2 shadow-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-pink-300">
+    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+      <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/>
+    </svg>
+    <span>Add to Favourite</span>
+  </button>
+  <input type="hidden" name="id" value="<%= home._id %>" />
+</form>

@@ -90,7 +90,7 @@ app.use("/host", hostRouter);
 
 app.use(errorsController.pageNotFound);
 
-const PORT = 3001;
+const PORT = process.env.PORT || 4000;
 
 mongoose.connect(DB_PATH).then(() => {
   console.log('Connected to Mongodb');

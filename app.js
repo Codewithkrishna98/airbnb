@@ -7,7 +7,9 @@ const session = require('express-session');
 const MongoDBStore = require('connect-mongodb-session')(session);
 const { default: mongoose } = require('mongoose');
 const multer = require('multer');
-const DB_PATH = "mongodb+srv://kishan:9451@airbnbcluster.rvqdjnd.mongodb.net/airbnb?retryWrites=true&w=majority&appName=Airbnbcluster"
+require('dotenv').config();
+
+const DB_PATH = process.env.DB_PATH;
 
 //Local Module
 const storeRouter = require("./routes/storeRouter")
